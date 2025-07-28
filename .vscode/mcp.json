@@ -1,0 +1,21 @@
+{
+    "servers": {
+        // Local server configuration
+        "imageMcpGen": {
+            "type": "stdio",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}/src/server.py"
+            ]
+        },
+        // Remote server configurations
+        "imageMcpGenHttp": {
+            "type": "http",
+            "url": "http://localhost:8000" // Edit this URL to match your server's address
+        },
+        "imageMcpGenSse": {
+            "type": "sse",
+            "url": "http://localhost:8000" // Edit this URL to match your server's address
+        }
+    }
+}
