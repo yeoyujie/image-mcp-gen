@@ -63,7 +63,7 @@ async def get_random_image(
     return Image(data=output.getvalue(), format="png")
 
 def main():
-    if os.getenv("ENV").lower() == "development":
+    if os.getenv("ENV", "production").lower() == "development":
         mcp.run()
     else:
         mcp.run(transport="streamable-http")
