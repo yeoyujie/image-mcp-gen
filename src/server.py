@@ -1,10 +1,18 @@
+
 import requests
+import os
 from io import BytesIO
 from PIL import Image as PILImage
 from mcp.server.fastmcp import FastMCP, Image, Context
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 mcp = FastMCP("Random Image Generator MCP", port=8000, host="0.0.0.0")
-base_url = "https://picsum.photos"
+BASE_URL = "https://picsum.photos"
 
 
 @mcp.tool()
@@ -46,7 +54,7 @@ async def get_random_image(
     query = ""
     if params:
         query = "?" + "&".join(params)
-    url = f"{base_url}{path}{query}"
+    url = f"{BASE_URL}{path}{query}"
     await ctx.info(f"Calling URL: {url}")
     response = requests.get(url)
     img = PILImage.open(BytesIO(response.content))
@@ -55,8 +63,10 @@ async def get_random_image(
     return Image(data=output.getvalue(), format="png")
 
 def main():
-    mcp.run(transport="streamable-http")
-    # mcp.run()
+    if os.getenv("ENV").lower() == "development":
+        mcp.run()
+    else:
+        mcp.run(transport="streamable-http")
 
 if __name__ == "__main__":
     main()
