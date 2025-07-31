@@ -4,7 +4,7 @@ from PIL import Image as PILImage
 from mcp.server.fastmcp import FastMCP, Image, Context
 from mcp.server.fastmcp.prompts import base
 
-mcp = FastMCP("Random Image Generator MCP", port=8000, host="localhost")
+mcp = FastMCP("Random Image Generator MCP", port=8000, host="0.0.0.0")
 base_url = "https://picsum.photos"
 
 
@@ -56,8 +56,8 @@ async def get_random_image(
     return Image(data=output.getvalue(), format="png")
 
 def main():
-    # mcp.run(transport="streamable-http")
-    mcp.run()
+    mcp.run(transport="streamable-http")
+    # mcp.run()
 
 if __name__ == "__main__":
     main()
