@@ -2,7 +2,6 @@ import requests
 from io import BytesIO
 from PIL import Image as PILImage
 from mcp.server.fastmcp import FastMCP, Image, Context
-from mcp.server.fastmcp.prompts import base
 
 mcp = FastMCP("Random Image Generator MCP", port=8000, host="0.0.0.0")
 base_url = "https://picsum.photos"
