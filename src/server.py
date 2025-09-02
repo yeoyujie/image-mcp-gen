@@ -3,7 +3,7 @@ import requests
 import os
 from io import BytesIO
 from PIL import Image as PILImage
-from mcp.server.fastmcp import FastMCP, Image, Context
+from fastmcp import FastMCP, Image, Context
 
 try:
     from dotenv import load_dotenv
