@@ -1,5 +1,6 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "platform": "github",
     "extends": [
         "config:best-practices"
     ],
@@ -15,7 +16,7 @@
             "matchManagers": [
                 "pep621"
             ],
-            "matchPaths": [
+            "matchFileNames": [
                 "**/pyproject.toml"
             ],
             "rangeStrategy": "bump"
