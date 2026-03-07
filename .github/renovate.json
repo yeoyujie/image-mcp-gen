@@ -4,6 +4,9 @@
     "extends": [
         "config:best-practices"
     ],
+    "repositories": [
+        "yeoyujie/image-mcp-gen"
+    ],
     "lockFileMaintenance": {
         "enabled": true,
         "automerge": true,
