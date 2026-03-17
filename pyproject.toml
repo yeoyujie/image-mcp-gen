@@ -5,7 +5,7 @@ description = "A lightweight, model-friendly MCP server that delivers random pla
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "mcp[cli]>=1.12.2",
+    "mcp[cli]>=1.26.0",
     "pillow>=11.3.0",
     "python-dotenv>=1.1.1",
     "requests>=2.32.4",
