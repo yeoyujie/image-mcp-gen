@@ -3,7 +3,7 @@ name = "image-mcp-gen"
 version = "0.1.0"
 description = "A lightweight, model-friendly MCP server that delivers random placeholder images."
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.14.3"
 dependencies = [
     "mcp[cli]>=1.12.2",
     "pillow>=11.3.0",
